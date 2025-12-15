@@ -1,0 +1,16 @@
+# Ignorer les fichiers objets et l'exécutable
+*.o
+*.exe
+c-wire      # Nom de votre exécutable final
+
+# Ignorer les dossiers de sortie et données volumineuses
+input/*
+output/*
+*.csv
+*.dat
+*.png
+
+# Ignorer les fichiers systèmes/IDE
+.DS_Store
+.vscode/
+
