@@ -9,7 +9,7 @@ Le programme analyse un fichier CSV massif décrivant l'architecture du réseau 
 2. **Détection de fuites :** Identification des tronçons défectueux via l'analyse des débits entrants/sortants.
 
 ## 👥 Équipe de Développement
-* **Membre 1 :** [Benjemia Melek]- *Architecte C & Structures de Données*
+* **Membre 1 :** [Benjemia Melek]- *Architecte C & Structures de Données* ** Melek-avl_core
 * **Membre 2 :** [Shilling Liam] - *Shell, Intégration & Histogrammes*
 * **Membre 3 :** [Khalil Brayan] - *Algorithmique Graphe & Calcul des Fuites*
 
