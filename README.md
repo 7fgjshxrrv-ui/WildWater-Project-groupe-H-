@@ -1,7 +1,7 @@
 # Projet C-WildWater
 
 **Cadre :** Pré-Ing2 CY Tech - Projet d'Informatique
-**Auteurs :** Groupe H
+**Auteurs :** Groupe H: BENJEMIA Melek, SHILLING Liam, KHALIL Brayan
 
 ---
 
