@@ -1,5 +1,6 @@
 Projet C – WildWater (préING2)
-Description générale
+
+##Description générale#
 Ce projet a pour objectif de développer une application permettant d’analyser des données issues
 d’un système de distribution d’eau potable.
 À partir d’un fichier CSV représentant un réseau de distribution, le programme permet de générer
