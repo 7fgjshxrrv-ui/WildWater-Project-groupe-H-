@@ -1,0 +1,69 @@
+Rapport d'Organisation et de Répartition – Projet WildWater
+
+Période de réalisation : Décembre 2025 (3 semaines) Équipe : Groupe H Participants :
+
+    BEN-JEMIA Melek (Participant 1)
+
+    SHILLING Liam (Participant 2)
+
+    KHALIL Brayan (Participant 3)
+
+1. Objectifs du Projet
+
+L'objectif est la mise en place d'un programme C et d'un script Shell pour produire des analyses statistiques (histogrammes) et calculer les fuites aval sur un réseau d'eau à partir d'un fichier CSV potentiellement très volumineux.
+
+2. Répartition des Tâches (Groupe de 3)
+
+La charge de travail a été répartie selon les pôles suivants :
+
+    BEN-JEMIA Melek (Structures & Indexation) : 
+
+    Implémentation de l'AVL pour l'indexation performante des usines et des nœuds du réseau.
+
+Définition des structures de base et de l'interface (interfaces.h).
+
+Développement des fonctions de parcours récursifs pour le tri des données.
+
+SHILLING Liam (Interface Shell & Mode Histo) :
+
+    Développement du script d'orchestration script.sh : gestion de la compilation via make, vérification des arguments et intégration de Gnuplot.
+
+Implémentation en C de la logique histo pour l'extraction et la génération des fichiers .dat.
+
+KHALIL Brayan (Graphe & Calcul des Fuites) :
+
+    Mise en place de la structure de liste chaînée pour la gestion des successeurs des stations.
+
+Construction du graphe aval en s'appuyant sur l'AVL pour la recherche des nœuds.
+
+Implémentation de l'algorithme de parcours (DFS) pour sommer les pertes selon la règle de répartition du réseau.
+
+3. Planning de Réalisation (3 semaines)
+
+    Semaine 1 : Architecture et Parsing
+
+        Mise en place du Makefile et du socle de l'indexation AVL.
+
+Développement du module de lecture robuste du CSV (gestion des gros fichiers).
+
+Semaine 2 : Analyse Statistique et Visualisation
+
+    Finalisation du mode histo en C et du script Shell.
+
+Automatisation de la génération des graphiques via Gnuplot.
+
+Semaine 3 : Réseau Aval et Finalisation
+
+    Implémentation des structures de graphe et du calcul récursif des fuites (leaks).
+
+Tests de validation, nettoyage de la mémoire et rédaction de la documentation (README).
+
+4. Points de Vigilance et Hypothèses Techniques
+
+    Robustesse : Utilisation de codes de retour supérieurs à 0 en cas d'erreur (ex: CSV introuvable, mémoire insuffisante).
+
+Mémoire : Libération systématique de la mémoire allouée dynamiquement pour prévenir les fuites.
+
+Modélisation : Le réseau est supposé orienté. Une protection anti-boucle est intégrée lors du calcul des pertes pour garantir la stabilité du programme.
+
+Flux de données : Le calcul leaks respecte la propagation aval à partir du volume réellement traité par l'usine source.
