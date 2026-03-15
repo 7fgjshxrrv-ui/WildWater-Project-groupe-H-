@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-/* --- Outils AVL (TD6) --- */
+
 static int max2(int a, int b) { return (a > b) ? a : b; }
 static int h(AVLUsine *n) { return n ? n->hauteur : 0; }
 
@@ -11,7 +11,6 @@ static void maj_hauteur(AVLUsine *n) {
     n->hauteur = 1 + max2(h(n->gauche), h(n->droite));
 }
 
-/* facteur = h(droite) - h(gauche) */
 static int facteur_equilibre(AVLUsine *n) {
     return n ? (h(n->droite) - h(n->gauche)) : 0;
 }
@@ -46,7 +45,7 @@ static AVLUsine *equilibrer(AVLUsine *n) {
     maj_hauteur(n);
     int fe = facteur_equilibre(n);
 
-    /* Trop à droite */
+    
     if (fe > 1) {
         if (facteur_equilibre(n->droite) < 0) {
             n->droite = rotation_droite(n->droite);
@@ -54,7 +53,7 @@ static AVLUsine *equilibrer(AVLUsine *n) {
         return rotation_gauche(n);
     }
 
-    /* Trop à gauche */
+    
     if (fe < -1) {
         if (facteur_equilibre(n->gauche) > 0) {
             n->gauche = rotation_gauche(n->gauche);
@@ -65,7 +64,7 @@ static AVLUsine *equilibrer(AVLUsine *n) {
     return n;
 }
 
-/* Copie de chaîne (CM/TD) : remplace strdup (hors cours) */
+
 static char *copier_chaine(const char *s) {
     char *p = (char*)malloc(strlen(s) + 1);
     if (!p) return NULL;
@@ -86,7 +85,7 @@ AVLUsine *avl_usine_inserer_ou_get(AVLUsine *racine, const char *cle, Usine **ou
             return NULL;
         }
 
-        n->valeur = usine_creer(cle); /* fonction du module usine */
+        n->valeur = usine_creer(cle); 
         if (!n->valeur) {
             free(n->cle);
             free(n);
