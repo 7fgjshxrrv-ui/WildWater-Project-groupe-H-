@@ -2,7 +2,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-/* Supprime \n et \r en fin de ligne (CM) */
 void couper_fin_ligne(char *s) {
     if (!s) return;
     size_t n = strlen(s);
@@ -24,8 +23,7 @@ int est_tiret(const char *s) {
     return (strcmp(s, "-") == 0);
 }
 
-/* Découpe une ligne en 5 colonnes séparées par ';'
-   (méthode simple CM : on remplace les ';' par '\\0') */
+
 void decouper_csv_5(char *ligne, char *cols[5]) {
     static char tiret[] = "-";
     int i;
@@ -45,7 +43,7 @@ void decouper_csv_5(char *ligne, char *cols[5]) {
     }
 }
 
-/* Lecture robuste d'un double avec strtod (CM) */
+
 int lire_double(const char *s, double *out) {
     if (!out) return 0;
     if (!s || s[0] == '\0' || est_tiret(s)) return 0;
@@ -53,8 +51,8 @@ int lire_double(const char *s, double *out) {
     char *end = NULL;
     double v = strtod(s, &end);
 
-    if (end == s) return 0;          /* rien lu */
-    if (*end != '\0') return 0;      /* caractères restants -> invalide */
+    if (end == s) return 0;          
+    if (*end != '\0') return 0;      
 
     *out = v;
     return 1;
