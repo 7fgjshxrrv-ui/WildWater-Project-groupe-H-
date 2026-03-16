@@ -6,8 +6,12 @@ Usine *usine_creer(const char *id) {
     Usine *u = (Usine*)calloc(1, sizeof(Usine));
     if (!u) return NULL;
 
-    u->id = strdup(id);
-    if (!u->id) { free(u); return NULL; }
+    u->id = malloc(strlen(id) + 1);
+    if (!u->id) {
+        free(u);
+        return NULL;
+    }
+    strcpy(u->id, id);
 
     u->max_km3 = 0;
     u->src_km3 = 0.0;
