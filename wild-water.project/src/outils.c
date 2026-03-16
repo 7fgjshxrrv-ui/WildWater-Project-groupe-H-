@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
+
 void couper_fin_ligne(char *s) {
     if (!s) return;
     size_t n = strlen(s);
@@ -55,5 +56,19 @@ int lire_double(const char *s, double *out) {
     if (*end != '\0') return 0;      
 
     *out = v;
+    return 1;
+}
+
+int lire_int(const char *s, int *out) {
+    if (!out) return 0;
+    if (!s || s[0] == '\0' || est_tiret(s)) return 0;
+
+    char *end = NULL;
+    long v = strtol(s, &end, 10);
+
+    if (end == s) return 0;      
+    if (*end != '\0') return 0;  
+
+    *out = (int)v;
     return 1;
 }
